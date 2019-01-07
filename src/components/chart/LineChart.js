@@ -1,8 +1,8 @@
-import React from 'react';
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/grid';
-import 'echarts/lib/chart/line';
+import React from 'react'
+import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/grid'
+import 'echarts/lib/chart/line'
 
 let defaultOptions = {
   color: ['#3398DB', '#c453ea', '#c7453e'],
@@ -28,7 +28,7 @@ let defaultOptions = {
     source: []
   },
   series: []
-};
+}
 
 export default class LineChart extends React.Component {
   constructor(props) {
@@ -103,9 +103,7 @@ export default class LineChart extends React.Component {
   }
 
   render() {
-    const { width="100%", height = '300px' } = this.props
-    return (
-      <div ref={this.chartNode} style={{width, height}}></div>
-    )
+    const { width = '100%', height = '300px' } = this.props
+    return <div ref={this.chartNode} style={{ width, height }} />
   }
 }

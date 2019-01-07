@@ -1,8 +1,8 @@
-import React from 'react';
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/grid';
-import 'echarts/lib/chart/bar';
+import React from 'react'
+import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/grid'
+import 'echarts/lib/chart/bar'
 
 let defaultOptions = {
   color: ['#3398DB', '#c453ea', '#c7453e'],
@@ -26,7 +26,7 @@ let defaultOptions = {
     source: []
   },
   series: []
-};
+}
 
 export default class BarChart extends React.Component {
   constructor(props) {
@@ -67,7 +67,7 @@ export default class BarChart extends React.Component {
         seriesLength = data[0].length - 1
       }
     }
-    const series = Array(seriesLength).fill({type: 'bar', seriesLayoutBy: type})
+    const series = Array(seriesLength).fill({ type: 'bar', seriesLayoutBy: type })
 
     const options = {
       ...defaultOptions,

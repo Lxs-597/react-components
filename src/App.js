@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PieChart from './components/chart/PieChart'
 import BarChart from './components/chart/BarChart'
 import LineChart from './components/chart/LineChart'
+import Editor from './components/editor/Editor'
 
 class App extends Component {
   constructor(props) {
@@ -25,8 +26,17 @@ class App extends Component {
         ['Milk Tea', 86.5, 92.1, 85.7, 83.1, 73.4, 55.1],
         ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4, 65.2, 82.5],
         ['Walnut Brownie', 55.2, 67.1, 69.2, 72.4, 53.9, 39.1]
-      ]
+      ],
+      editorContentValue: '哈哈哈！你是瓜皮吧'
     }
+  }
+
+  handleEditorContentChange = editorContentValue => {
+    if (editorContentValue == this.state.editorContentValue) {
+      return
+    }
+
+    this.setState({ editorContentValue })
   }
 
   render() {
@@ -35,6 +45,11 @@ class App extends Component {
         <PieChart data={this.state.pieData}/>
         <BarChart data={this.state.barData}/>
         <LineChart data={this.state.lineData}/>
+        <div>{ this.state.editorContentValue }</div>
+        <Editor
+          editorContentValue={this.state.editorContentValue}
+          handleEditorContentChange={this.handleEditorContentChange}
+        />
       </div>
     );
   }

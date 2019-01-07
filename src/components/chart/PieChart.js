@@ -1,8 +1,8 @@
-import React from 'react';
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/legend';
-import 'echarts/lib/chart/pie';
+import React from 'react'
+import echarts from 'echarts/lib/echarts'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/chart/pie'
 
 let defaultOptions = {
   tooltip: {
@@ -13,11 +13,11 @@ let defaultOptions = {
   },
   legend: {
     orient: 'horizontal',
-    x: 'center',
+    x: 'center'
   },
   dataset: [],
   series: []
-};
+}
 
 export default class PieChart extends React.Component {
   constructor(props) {
@@ -92,9 +92,7 @@ export default class PieChart extends React.Component {
   }
 
   render() {
-    const { width="100%", height = '300px' } = this.props
-    return (
-      <div ref={this.chartNode} style={{width, height}}></div>
-    )
+    const { width = '100%', height = '300px' } = this.props
+    return <div ref={this.chartNode} style={{ width, height }} />
   }
 }
